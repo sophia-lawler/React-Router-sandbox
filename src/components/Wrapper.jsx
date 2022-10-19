@@ -6,7 +6,7 @@ function Wrapper() {
   return (
 <>
     <Header />
-    <Link to='/weather'>Weather</Link>
+    <Link to='/weather/auckland'>Weather</Link>
     <Outlet/>
     <Footer />
     </>
