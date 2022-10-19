@@ -8,6 +8,7 @@ export function getWeather(city = 'auckland') {
     )
     .set('Accept', 'application/json')
     .then((response) => {
+      console.log('res: ', response.body)
       return response.body
     })
     .catch((err) => {
