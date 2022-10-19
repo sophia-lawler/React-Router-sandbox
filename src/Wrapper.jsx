@@ -6,7 +6,7 @@ function Wrapper() {
   return (
 <>
     <Header />
-    <Link to='/new'>I'm in the header. Click me for New stuff</Link>
+    <Link to='/weather'>Weather</Link>
     <Outlet/>
     <Footer />
     </>

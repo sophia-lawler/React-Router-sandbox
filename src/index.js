@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import Wrapper from './Wrapper'
-import New from './New'
+import Weather from './Weather'
 import reportWebVitals from './reportWebVitals'
 import {
   createBrowserRouter,
@@ -16,7 +16,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<Wrapper />}>
       <Route path="/" element={<App />} />
-      <Route path="/new" loader={getWeather} element={<New />} />
+      <Route path="/weather" loader={getWeather} element={<Weather />} />
     </Route>
   )
 )
