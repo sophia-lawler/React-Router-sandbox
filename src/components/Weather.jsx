@@ -1,13 +1,19 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useLoaderData, Form } from 'react-router-dom'
 
-function New() {
+function Weather() {
   const [input, setInput] = useState('')
   const weatherData = useLoaderData()
 
+  useEffect(() => {
+    console.log('entering useEffect')
+    return () => {
+      console.log('returning useEffect')
+    }
+  }, [])
   return (
     <>
-      <h3> {weatherData.name}</h3>
+      <h3>{weatherData.name}</h3>
       <p>{weatherData.weather[0].main}</p>
       <p>{weatherData.main.temp}</p>
 
@@ -18,7 +24,7 @@ function New() {
           size="10"
           onChange={(e) => setInput(e.target.value)}
         />
-        <button type="submit" style={{ height: '30px' }} onsubmit= "return false">
+        <button type="submit" style={{ height: '30px' }}>
           search
         </button>
       </Form>
@@ -26,4 +32,4 @@ function New() {
   )
 }
 
-export default New
+export default Weather

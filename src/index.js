@@ -17,7 +17,10 @@ const router = createBrowserRouter(
       <Route path="/" element={<App />} />
       <Route
         path="/weather/:city"
-        loader={(request) => getWeather(request.params.city)}
+        loader={(request) => {
+          console.log('loader')
+          return getWeather(request.params.city)
+        }}
         element={<Weather />}
       />
     </Route>
