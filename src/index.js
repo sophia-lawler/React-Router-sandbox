@@ -15,7 +15,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<Wrapper />}>
       <Route path="/" element={<App />} />
-      <Route path="/weather" loader={getWeather} element={<Weather />} />
+      <Route path="/weather/:city" loader={({params}) => getWeather(params.city)} element={<Weather />} />
     </Route>
   )
 )
