@@ -20,7 +20,7 @@ const router = createBrowserRouter(
         ({request}) => {
         let url = new URL(request.url)
         let searchTerm = url.searchParams.get('city')
-        return getWeather(searchTerm)
+        return getWeather(searchTerm? searchTerm : undefined)
         } 
       }
       element={<Weather />}
