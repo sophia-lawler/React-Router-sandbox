@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './components/App'
 import Wrapper from './components/Wrapper'
 import Weather from './components/Weather'
 import {
@@ -13,9 +12,15 @@ import { getWeather } from './api/weather'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route element={<Wrapper />}>
-      <Route path="/" element={<App />} />
-      <Route path="/weather" loader={getWeather} element={<Weather />} />
+    <Route path="/" element={<Wrapper />}>
+      <Route
+        path="/weather/:city"
+        loader={(request) => {
+          console.log('loader')
+          return getWeather(request.params.city)
+        }}
+        element={<Weather />}
+      />
     </Route>
   )
 )
