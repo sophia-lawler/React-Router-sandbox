@@ -11,15 +11,15 @@ function Weather() {
       console.log('returning useEffect')
     }
   }, [])
+
   return (
-    <>
+    <article>
       <h3>{weatherData.name}</h3>
       <p>{weatherData.weather[0].main}</p>
       <p>{weatherData.main.temp}</p>
 
       <Form method="get" action={`/weather/${input}`}>
         <input
-          name="city"
           type="text"
           size="10"
           onChange={(e) => setInput(e.target.value)}
@@ -28,7 +28,7 @@ function Weather() {
           search
         </button>
       </Form>
-    </>
+    </article>
   )
 }
 
